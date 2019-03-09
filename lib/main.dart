@@ -10,9 +10,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-            title: Text('EasyList')),
-        body: ProductManager(),
+        appBar: AppBar(title: Text('EasyList')),
+        body: ProductManager('Food Tester'), // Pass init state
       ),
     );
   }

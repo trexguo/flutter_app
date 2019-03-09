@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import './products.dart';
 
 class ProductManager extends StatefulWidget {
+  final String startingProduct;
+
+  // Receive props and save it to startingProduct
+  ProductManager(this.startingProduct);
+
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
@@ -10,7 +15,14 @@ class ProductManager extends StatefulWidget {
 }
 
 class _ProductManager extends State<ProductManager> {
-  List<String> _products = ['Food Tester'];
+  List<String> _products = [];
+
+  @override
+  void initState() {
+    // Init state by passed props
+    _products.add(widget.startingProduct);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
